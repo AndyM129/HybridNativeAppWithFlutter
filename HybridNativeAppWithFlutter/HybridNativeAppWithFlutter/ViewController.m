@@ -31,6 +31,10 @@
 
 - (void)handleButtonAction {
     FlutterViewController *flutterViewController = [[FlutterViewController alloc] init];
+    
+    // 指定前往的flutter页面，不指定则为flutter main.dart中的指定的首页页面
+    [flutterViewController setInitialRoute:@"/A"];
+    
     [self presentViewController:flutterViewController animated:YES completion:nil];
 }
 

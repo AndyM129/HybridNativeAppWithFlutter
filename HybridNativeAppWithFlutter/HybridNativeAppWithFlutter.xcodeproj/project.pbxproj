@@ -13,7 +13,7 @@
 		888DBA8D217F569F008CF759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888DBA8C217F569F008CF759 /* Assets.xcassets */; };
 		888DBA90217F569F008CF759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888DBA8E217F569F008CF759 /* LaunchScreen.storyboard */; };
 		888DBA93217F569F008CF759 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 888DBA92217F569F008CF759 /* main.m */; };
-		889967A62180465E002B9422 /* flutter_assets in Resources */ = {isa = PBXBuildFile; fileRef = 889967A52180465E002B9422 /* flutter_assets */; };
+		889967AB21805946002B9422 /* flutter_assets in Resources */ = {isa = PBXBuildFile; fileRef = 889967AA21805946002B9422 /* flutter_assets */; };
 		89BCCE460510FD783FD0B2F5 /* libPods-HybridNativeAppWithFlutter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 058A2243C818443667288334 /* libPods-HybridNativeAppWithFlutter.a */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,7 @@
 		888DBA8F217F569F008CF759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		888DBA91217F569F008CF759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888DBA92217F569F008CF759 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		889967A52180465E002B9422 /* flutter_assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = flutter_assets; path = ../../flutter_module/.ios/Flutter/flutter_assets; sourceTree = "<group>"; };
+		889967AA21805946002B9422 /* flutter_assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = flutter_assets; path = ../../flutter_module/.ios/Flutter/flutter_assets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +81,8 @@
 				888DBA86217F569F008CF759 /* ViewController.h */,
 				888DBA87217F569F008CF759 /* ViewController.m */,
 				888DBA89217F569F008CF759 /* Main.storyboard */,
-				889967A52180465E002B9422 /* flutter_assets */,
 				888DBA8C217F569F008CF759 /* Assets.xcassets */,
+				889967AA21805946002B9422 /* flutter_assets */,
 				888DBA8E217F569F008CF759 /* LaunchScreen.storyboard */,
 				888DBA91217F569F008CF759 /* Info.plist */,
 				888DBA92217F569F008CF759 /* main.m */,
@@ -160,7 +160,7 @@
 			files = (
 				888DBA90217F569F008CF759 /* LaunchScreen.storyboard in Resources */,
 				888DBA8D217F569F008CF759 /* Assets.xcassets in Resources */,
-				889967A62180465E002B9422 /* flutter_assets in Resources */,
+				889967AB21805946002B9422 /* flutter_assets in Resources */,
 				888DBA8B217F569F008CF759 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

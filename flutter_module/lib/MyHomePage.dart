@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/NextPage.dart';
+import 'package:flutter_module/APage.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void gotoNextPage() {
     Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context){
-      return new NextPage(title: 'Flutter Home Page');
+      return new APage(title: 'Flutter A Page');
     }));
   }
 
@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
             new RaisedButton(
                 onPressed: gotoNextPage,
                 color: Colors.blue,
-                child: new Text('Goto Next Page',
+                child: new Text('Goto A Page',
                     style: new TextStyle(color: Colors.white))),
           ],
         ),
