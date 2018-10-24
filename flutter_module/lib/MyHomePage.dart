@@ -78,6 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: new Text('You have pushed the button $_counter times..',
                     style: new TextStyle(color: Colors.white))),
             new RaisedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, "/BatteryLevel");
+                },
+                color: Colors.blue,
+                child: new Text('Goto BatteryLevel Page',
+                    style: new TextStyle(color: Colors.white))),
+            new RaisedButton(
                 onPressed: gotoNextPage,
                 color: Colors.blue,
                 child: new Text('Goto A Page',

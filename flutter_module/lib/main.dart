@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_module/MyHomePage.dart';
+import 'package:flutter_module/BatteryLevelPage.dart';
 import 'package:flutter_module/APage.dart';
 import 'package:flutter_module/BPage.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       home: new MyHomePage(title: 'ABC Flutter Demo Home Page'),
       routes: <String, WidgetBuilder>{
         '/Home': (BuildContext context) => MyHomePage(title: 'MyHomePage'),
+        '/BatteryLevel': (BuildContext context) => BatteryLevelPage(title: 'BatteryLevelPage'),
         '/A': (BuildContext context) => APage(title: 'APage'),
         '/B': (BuildContext context) => BPage(title: 'BPage'),
       },
