@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+inhibit_all_warnings!
+
+
+target 'HybridNativeAppWithFlutter' do
+
+end
+
+
+# Add your Flutter app to your Podfile
+flutter_application_path = '../flutter_module'
+eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
