@@ -127,21 +127,32 @@ class _MethodChannelDemoPageState extends State<MethodChannelDemoPage> {
     );
   }
 
+  Widget buildAppBar(BuildContext context) {
+    if (_isHybrid) {
+      return null;
+    } else {
+      return new AppBar(
+        // Here we take the value from the MethodChannelDemoPage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: new Text(widget.title),
+      );
+    }
+  }
+
+  Widget buildFloatingActionButton(BuildContext context) {
+    return new FloatingActionButton(
+      onPressed: _incrementCounter,
+      tooltip: 'Increment',
+      child: new Icon(Icons.add),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
-//      appBar: new AppBar(
-//        // Here we take the value from the MethodChannelDemoPage object that was created by
-//        // the App.build method, and use it to set our appbar title.
-//        title: new Text(widget.title),
-//      ),
+      appBar: buildAppBar(context),
       body: buildBody(context),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: new Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: buildFloatingActionButton(context),// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
