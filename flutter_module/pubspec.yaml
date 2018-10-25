@@ -6,8 +6,11 @@ environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
 dependencies:
+  #hybrid_stack_manager: 0.0.6
   flutter:
     sdk: flutter
+  battery_level:
+    path: ../flutter_plugins/battery_level
 
 dev_dependencies:
   flutter_test:

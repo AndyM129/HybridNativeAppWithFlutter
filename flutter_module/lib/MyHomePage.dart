@@ -33,12 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void gotoNextPage() {
-    Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context){
-      return new APage(title: 'Flutter A Page');
-    }));
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -78,14 +72,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: new Text('You have pushed the button $_counter times..',
                     style: new TextStyle(color: Colors.white))),
             new RaisedButton(
-                onPressed: (){
+                onPressed: () {
                   Navigator.pushNamed(context, "/BatteryLevel");
                 },
                 color: Colors.blue,
                 child: new Text('Goto BatteryLevel Page',
                     style: new TextStyle(color: Colors.white))),
             new RaisedButton(
-                onPressed: gotoNextPage,
+                onPressed: () {
+                  Navigator.push(context,
+                      new MaterialPageRoute(builder: (BuildContext context) {
+                    return new APage(title: 'Flutter A Page');
+                  }));
+                },
                 color: Colors.blue,
                 child: new Text('Goto A Page',
                     style: new TextStyle(color: Colors.white))),

@@ -1,18 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
+import 'package:battery_level/battery_level.dart';
 
 class BatteryLevelPage extends StatefulWidget {
   BatteryLevelPage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -22,41 +14,77 @@ class BatteryLevelPage extends StatefulWidget {
 
 class _BatteryLevelPageState extends State<BatteryLevelPage> {
 
-  static const platform = const MethodChannel('samples.flutter.io/battery');
+  String _platformVersion = 'Unknown';
+  int _batteryLevel = 0;
 
-  String _batteryLevel = 'Unknown battery level.';
+  @override
+  void initState() {
+    super.initState();
+    updatePlatformState();
+  }
 
-  Future<Null> _getBatteryLevel() async {
-    String batteryLevel;
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> updatePlatformState() async {
+    String platformVersion;
+
     try {
-      final int result = await platform.invokeMethod('getBatteryLevel');
-      batteryLevel = 'Battery level at $result % .';
-    } on PlatformException catch (e) {
-      batteryLevel = "Failed to get battery level: '${e.message}'.";
+      platformVersion = await BatteryLevel.platformVersion;
+    } on PlatformException {
+      platformVersion = 'Failed to get platform version.';
     }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
+
+    setState(() {
+      _platformVersion = platformVersion;
+    });
+  }
+
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> updateBatteryLevel () async {
+    int batteryLevel;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      batteryLevel = await BatteryLevel.batteryLevel;
+    } on PlatformException {
+      batteryLevel = -1;
+    }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
 
     setState(() {
       _batteryLevel = batteryLevel;
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: new Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            RaisedButton(
-              child: Text('Get Battery Level'),
-              onPressed: _getBatteryLevel,
-            ),
-            Text(_batteryLevel),
-          ],
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Plugin example app'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RaisedButton(
+                child: Text('当前系统版本: $_platformVersion'),
+                onPressed: updatePlatformState,
+              ),
+              RaisedButton(
+                child: Text('当前电量: $_batteryLevel %'),
+                onPressed: updateBatteryLevel,
+              ),
+              Text('\n\n（点击按钮以更新信息）'),
+            ],
+          ),
         ),
       ),
     );
