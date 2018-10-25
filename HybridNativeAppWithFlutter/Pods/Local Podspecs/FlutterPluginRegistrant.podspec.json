@@ -24,6 +24,9 @@
   "dependencies": {
     "Flutter": [
 
+    ],
+    "battery_level": [
+
     ]
   }
 }

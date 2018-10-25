@@ -73,6 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: new TextStyle(color: Colors.white))),
             new RaisedButton(
                 onPressed: () {
+                  Navigator.pushNamed(context, "/MethodChannelDemo");
+                },
+                color: Colors.blue,
+                child: new Text('Goto MethodChannelDemo Page',
+                    style: new TextStyle(color: Colors.white))),
+            new RaisedButton(
+                onPressed: () {
                   Navigator.pushNamed(context, "/BatteryLevel");
                 },
                 color: Colors.blue,

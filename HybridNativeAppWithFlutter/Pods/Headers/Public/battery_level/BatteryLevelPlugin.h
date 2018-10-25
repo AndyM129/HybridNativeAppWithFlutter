@@ -1,0 +1,1 @@
+../../../../../flutter_module/.ios/Flutter/.symlinks/battery_level/ios/Classes/BatteryLevelPlugin.h
