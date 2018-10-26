@@ -7,6 +7,16 @@
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/build" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/example/ios/.symlinks/plugins/battery_level/example/build/ios/Debug-iphoneos/Runner.app/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/example/ios/.symlinks/plugins/battery_level/example/build/ios/iphoneos/Runner.app/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/example/ios/.symlinks/plugins/battery_level/example/ios/Flutter/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/battery_level/example/ios/Flutter/flutter_assets/packages" />
       <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/hybrid_stack_manager/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/hybrid_stack_manager/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/hybrid_stack_manager/build" />

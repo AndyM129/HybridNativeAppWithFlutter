@@ -14,6 +14,7 @@
 		888DBA90217F569F008CF759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888DBA8E217F569F008CF759 /* LaunchScreen.storyboard */; };
 		888DBA93217F569F008CF759 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 888DBA92217F569F008CF759 /* main.m */; };
 		8899932C2181BC51002B9422 /* flutter_assets in Resources */ = {isa = PBXBuildFile; fileRef = 8899932B2181BC51002B9422 /* flutter_assets */; };
+		8899932F2181CA99002B9422 /* FlutterViewController+Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8899932E2181CA99002B9422 /* FlutterViewController+Singleton.m */; };
 		89BCCE460510FD783FD0B2F5 /* libPods-HybridNativeAppWithFlutter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 058A2243C818443667288334 /* libPods-HybridNativeAppWithFlutter.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,8 @@
 		888DBA91217F569F008CF759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888DBA92217F569F008CF759 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8899932B2181BC51002B9422 /* flutter_assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = flutter_assets; path = ../../flutter_module/.ios/Flutter/flutter_assets; sourceTree = "<group>"; };
+		8899932D2181CA99002B9422 /* FlutterViewController+Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlutterViewController+Singleton.h"; sourceTree = "<group>"; };
+		8899932E2181CA99002B9422 /* FlutterViewController+Singleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FlutterViewController+Singleton.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 		889993282181B534002B9422 /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
+				8899932D2181CA99002B9422 /* FlutterViewController+Singleton.h */,
+				8899932E2181CA99002B9422 /* FlutterViewController+Singleton.m */,
 				8899932B2181BC51002B9422 /* flutter_assets */,
 			);
 			path = Flutter;
@@ -233,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				888DBA88217F569F008CF759 /* ViewController.m in Sources */,
+				8899932F2181CA99002B9422 /* FlutterViewController+Singleton.m in Sources */,
 				888DBA93217F569F008CF759 /* main.m in Sources */,
 				888DBA85217F569F008CF759 /* AppDelegate.m in Sources */,
 			);

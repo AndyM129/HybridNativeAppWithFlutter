@@ -15,6 +15,10 @@
 
 @implementation ViewController
 
+- (void)dealloc {
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HybridNativeAppWithFlutter";
@@ -30,16 +34,23 @@
 }
 
 - (void)handleButtonAction {
-    __weak __typeof(self) weakSelf = self;
-
     FlutterViewController *flutterViewController = [[FlutterViewController alloc] init];
     
+    // 添加 MethodChannel
+    [self addMethodChannelWithNameWithBinaryMessenger:flutterViewController];
     
-    // 要与main.dart中一致
-    NSString *channelName = @"com.pages.your/native_get";
+    // 指定前往的flutter页面，不指定则为flutter main.dart中的指定的首页页面
+    [flutterViewController setInitialRoute:@"/MethodChannelDemo"];
     
-    FlutterMethodChannel *messageChannel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:flutterViewController];
-    
+    // 前往 flutter 模块页面
+    [self.navigationController pushViewController:flutterViewController animated:YES];
+}
+
+- (void)addMethodChannelWithNameWithBinaryMessenger:(NSObject<FlutterBinaryMessenger>*)messenger {
+    __weak __typeof(self) weakSelf = self;
+
+    NSString *channelName = @"com.pages.your/native_get";   // 要与main.dart中一致
+    FlutterMethodChannel *messageChannel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:messenger];
     [messageChannel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
         // call.method 获取 flutter 给回到的方法名，要匹配到 channelName 对应的多个 发送方法名，一般需要判断区分
         // call.arguments 获取到 flutter 给到的参数，（比如跳转到另一个页面所需要参数）
@@ -57,19 +68,13 @@
         } else if ([call.method isEqualToString:@"isHybrid"]) {
             result==nil ?: result(@YES);
         } else if ([call.method isEqualToString:@"toNativePush"]) {
-            UIViewController *testViewController = [[UIViewController alloc] init];
-            testViewController.view.backgroundColor = [UIColor orangeColor];
+            ViewController *testViewController = [[ViewController alloc] init];
+            testViewController.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:(arc4random()%9+1)/10 alpha:1];
             [weakSelf.navigationController pushViewController:testViewController animated:YES];
         } else if ([call.method isEqualToString:@"toNativePop"]) {
             [weakSelf.navigationController popViewControllerAnimated:YES];
         }
     }];
-    
-    // 指定前往的flutter页面，不指定则为flutter main.dart中的指定的首页页面
-    [flutterViewController setInitialRoute:@"/Home"];
-    
-    [self.navigationController pushViewController:flutterViewController animated:YES];
-    //[self presentViewController:flutterViewController animated:YES completion:nil];
 }
 
 @end

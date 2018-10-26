@@ -112,6 +112,20 @@ class _MethodChannelDemoPageState extends State<MethodChannelDemoPage> {
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          new RaisedButton(
+              onPressed: () {
+                methodChannel.invokeMethod('toNativePop','大佬你点击了$_counter下');
+              },
+              color: Colors.blue,
+              child: new Text('Goto Previous Page',
+                  style: new TextStyle(color: Colors.white))),
+          new RaisedButton(
+              onPressed: () {
+                methodChannel.invokeMethod('toNativePush','大佬你点击了$_counter下');
+              },
+              color: Colors.blue,
+              child: new Text('Goto Next Native Page',
+                  style: new TextStyle(color: Colors.white))),
           new Text(
             '当前是否为 Flutter&Native 混合开发：$_isHybrid .',
           ),
