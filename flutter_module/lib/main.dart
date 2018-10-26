@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_module/MyHomePage.dart';
 import 'package:flutter_module/BatteryLevelPage.dart';
 import 'package:flutter_module/MethodChannelDemoPage.dart';
+import 'package:flutter_module/GotoNativeDemoPage.dart';
 import 'package:flutter_module/APage.dart';
 import 'package:flutter_module/BPage.dart';
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/Home': (BuildContext context) => MyHomePage(title: 'MyHomePage'),
         '/BatteryLevel': (BuildContext context) => BatteryLevelPage(title: 'BatteryLevelPage'),
         '/MethodChannelDemo': (BuildContext context) => MethodChannelDemoPage(title: 'MethodChannelDemoPage'),
+        '/GotoNativeDemoPage': (BuildContext context) => GotoNativeDemoPage(title: 'GotoNativeDemoPage'),
         '/A': (BuildContext context) => APage(title: 'APage'),
         '/B': (BuildContext context) => BPage(title: 'BPage'),
       },

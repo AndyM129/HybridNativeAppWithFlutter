@@ -57,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _buildListViewIncrementCounterRow(context, 0),
       _buildListViewSectionHeader(context, "页面跳转"),
       _buildListViewGotoAPageRow(context, 0),
+      _buildListViewGotoPageBetweenFlutterAndyNativeRow(context, 0),
       _buildListViewSectionHeader(context, "功能测试"),
       _buildListViewBatteryLevelRow(context, 0),
       _buildListViewMethodChannelDemoRow(context, 0),
@@ -74,9 +75,24 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Padding(
       padding: const EdgeInsets.fromLTRB(5.0, 0, 5, 0),
       child: new ListTile(
-        title: new Text("You have tapped the item $_counter times...",
-            style: _listItemTitleFont),
+        title: new Text("你已经点击该行 $_counter 次...", style: _listItemTitleFont),
         onTap: _incrementCounter,
+      ),
+    );
+  }
+
+  // 列表 - 测试 Flutter与Native之间页面跳转
+  Widget _buildListViewGotoPageBetweenFlutterAndyNativeRow(
+      BuildContext context, int index) {
+    return _buildListViewRowWithBottomDivider(
+      context,
+      new ListTile(
+        title:
+            new Text("测试 Flutter & Native 之间页面跳转", style: _listItemTitleFont),
+        trailing: new Icon(Icons.arrow_forward_ios),
+        onTap: () {
+          Navigator.pushNamed(context, "/GotoNativeDemoPage");
+        },
       ),
     );
   }
@@ -86,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return _buildListViewRowWithBottomDivider(
       context,
       new ListTile(
-        title: new Text("Goto APage"),
+        title: new Text("前往 APage 测试页", style: _listItemTitleFont),
         trailing: new Icon(Icons.arrow_forward_ios),
         onTap: () {
           Navigator.push(context,
@@ -103,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return _buildListViewRowWithBottomDivider(
       context,
       new ListTile(
-        title: new Text("Goto BatteryLevel Page", style: _listItemTitleFont),
+        title: new Text("前往 BatteryLevel 测试页", style: _listItemTitleFont),
         trailing: new Icon(Icons.arrow_forward_ios),
         onTap: () {
           Navigator.pushNamed(context, "/BatteryLevel");
@@ -117,8 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return _buildListViewRowWithBottomDivider(
       context,
       new ListTile(
-        title:
-            new Text("Goto MethodChannelDemo Page", style: _listItemTitleFont),
+        title: new Text("前往 MethodChannel 测试页", style: _listItemTitleFont),
         trailing: new Icon(Icons.arrow_forward_ios),
         onTap: () {
           Navigator.pushNamed(context, "/MethodChannelDemo");
